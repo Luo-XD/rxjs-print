@@ -1,0 +1,63 @@
+#ckpt-page * {
+  padding: 0;
+  margin: 0;
+}
+
+#ckpt-page {
+  $border: #ccc;
+  $color: #353535;
+  $theme: #a69ae1;
+  $theme-bg: #f2f1fc;
+  width: auto;
+  height: auto;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  .ckpt-tabs {
+    width: 100%;
+    display: flex;
+    height: auto;
+    border-bottom: solid 1px $theme;
+    .ckpt-tab-item {
+      font-size: 12px;
+      color: $theme;
+      padding: 4px 8px;
+      background-color: $theme-bg;
+      transform: translateX(1rem);
+      $btn-radius: 5px;
+      &.active {
+        color: white;
+        background-color: $theme;
+      }
+      &:last-child {
+        border-radius: 0 $btn-radius 0 0;
+      }
+      &:first-child {
+        border-radius: $btn-radius 0 0 0;
+      }
+    }
+  }
+  .ckpt-header {
+    padding: 1rem;
+    #filter {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      .ckpt-form-item {
+        display: flex;
+        align-items: center;
+        .ckpt-label {
+          margin-right: 0.5rem;
+          width: 65px;
+          font-size: 14px;
+        }
+        .ckpt-input {
+          outline-style: none;
+          border: 1px $border solid;
+          border-radius: 5px;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
